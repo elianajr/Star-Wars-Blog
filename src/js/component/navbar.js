@@ -1,17 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CardsCharacters from "./cardsPeople";
+import Startships from "./starships.jsx";
+import Planets from "./Planets.jsx";
+import Home from "./home.js";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
-		</nav>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="" element={<CardsCharacters />} />
+				<Route path="" element={<Startships />} />
+				<Route path="" element={<Planets />} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
