@@ -1,33 +1,18 @@
-/* 
-    General Styles
-*/
 
-img{
-    width: 5rem;
-}
 
-.card-img-top{
-    width: 5rem;
-}
-
-.Planetsview{
-    background: aqua;
-}
-
-.listfavourites{
-    
+  li {
     list-style: none;
-    color:#ff6; 
-    overflow: hidden;
-    font-weight: bold;
-   
+  }
+
+  button {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; 
+    color: yellow;      
 }
 
-.btnfavourite{
-    color:#ff6;;
-    margin-left: 0.5rem;
-    
-}
 
 
-
+  
