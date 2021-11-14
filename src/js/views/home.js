@@ -6,9 +6,10 @@ import { Context } from "../store/appContext";
 import CardsPlanet from "../component/CardsPlanet.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router";
+import SearchBar from "../component/SearchBar.jsx";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
-	return <CardsPlanet />;
+	return <h1 />;
 };
