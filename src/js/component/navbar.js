@@ -1,41 +1,48 @@
-// import React, { useContext } from "react";
-// // import NavDropdown from "react-bootstrap";
-// import { Link } from "react-router-dom";
-// import { Context } from "../store/appContext";
-// // import Navbar from "react-bootstrap/Navbar";
-// import IconButton from "@mui/material/IconButton";
 
-// export const Navbar = () => {
-// 	const { store, actions } = useContext(Context);
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import CardsCharacters from "./cardsPeople";
+//import Startships from "./starships.jsx";
+//import Planets from "../views/Planets.jsx";
+//import Home from "./home.js";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import SearchBar from "./SearchBar.jsx";
+import { Context } from "../store/appContext.js";
+import { useContext } from "react";
+import "../../styles/index.scss";
 
-// 	const favourites = store.favourites.map((favourite, index) => {
-// 		return (
-// 			<ul key={index.toString()}>
-// 				{favourite}
-// 				<button onClick={() => actions.deleteFavourites(favourite)}>
-// 					<i className="fas fa-times" />
-// 				</button>
-// 			</ul>
-// 		);
-// 	});
-// 	return (
-// 		<nav className="navbar navbar-light bg-light mb-3">
-// 			<Link to="/">
-// 				<span className="navbar-brand mb-0 h1">Home</span>
-// 			</Link>
-// 			<Link to="/people">
-// 				<span className="navbar-brand mb-0 h1">People</span>
-// 			</Link>
-// 			<Link to="/planets">
-// 				<span className="navbar-brand mb-0 h1">Planets</span>
-// 			</Link>
-// 			<Link to="/starships">
-// 				<span className="navbar-brand mb-0 h1">Starships</span>
-// 			</Link>
-// 			<IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-// 				Favourites
-// 				<ul>{favourites}</ul>
-// 			</IconButton>
-// 		</nav>
-// 	);
-// };
+export const Navigationbar = () => {
+	const { store, actions } = useContext(Context);
+	const favourites = store.favourites.map((favourite, index) => {
+		return (
+			<li key={index.toString()}>
+				{favourite}
+				<i className="fas fa-times btnfavourite" onClick={() => actions.deletefavourites(favourite)} />
+			</li>
+		);
+	});
+	return (
+		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+			<Container>
+				<Navbar.Brand href="/">StarWars</Navbar.Brand>
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="me-auto">
+						<Nav.Link href="/characters">Characters</Nav.Link>
+						<Nav.Link href="/starships">Starships</Nav.Link>
+						<Nav.Link href="/planets">Planets</Nav.Link>
+						<NavDropdown title="Favourites" id="collasible-nav-dropdown" menuVariant="dark">
+							<ul className="listfavourites">{favourites}</ul>
+						</NavDropdown>
+					</Nav>
+					<Nav>
+						<SearchBar />
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar>
+	);
+};
+

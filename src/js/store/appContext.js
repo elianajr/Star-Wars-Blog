@@ -21,9 +21,9 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		// useEffect(() => {
-		// 	state.actions.getStarships();
-		// }, []);
+		useEffect(() => {
+			state.actions.getPlanets();
+		}, []);
 
 		useEffect(() => {
 			let local = JSON.parse(localStorage.getItem("starships"));
