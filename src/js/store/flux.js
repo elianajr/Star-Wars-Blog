@@ -11,8 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			urlplanets: "https://www.swapi.tech/api/planets",
 			urlplanetsdescription: "https://www.swapi.tech/api/planets",
 			planets: [],
-			planetsdetails: {},
-			
+			planetsdetails: {}
 		},
 		actions: {
 			getStarships: () => {
@@ -108,9 +107,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					favourites: getStore().favourites.filter(item => item != deleted)
 				});
-		},
-	}
-	}
+			}
+		}
+	};
 };
 
 export default getState;

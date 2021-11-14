@@ -26,14 +26,14 @@ const CardsPlanet = props => {
 						<Link className="linkplanets rounded mx-4" to={`/planets/`.concat(props.urlnumber)}>
 							Learn more
 						</Link>
-						<i
-							onClick={() => {
-								actions.addfavourites(props.element.name);
-								console.log(store.favourites);
-							}}
-							className="far fa-heart"
-						/>
-						{}
+						<Button
+							onClick={event => {
+								event.preventDefault;
+								actions.addFavourites(props.element.name);
+								// console.log(store.favourites);
+							}}>
+							<i className="far fa-heart" />
+						</Button>
 					</div>
 				</Card.Body>
 			</Card>

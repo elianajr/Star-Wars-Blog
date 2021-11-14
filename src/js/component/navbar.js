@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import CardsCharacters from "./cardsPeople";
@@ -20,7 +19,13 @@ export const Navigationbar = () => {
 		return (
 			<li key={index.toString()}>
 				{favourite}
-				<i className="fas fa-times btnfavourite" onClick={() => actions.deletefavourites(favourite)} />
+				<button
+					onClick={event => {
+						event.preventDefault;
+						actions.deletefavourites(favourite);
+					}}>
+					<i className="fas fa-times btnfavourite" />
+				</button>
 			</li>
 		);
 	});
@@ -45,4 +50,3 @@ export const Navigationbar = () => {
 		</Navbar>
 	);
 };
-

@@ -27,7 +27,7 @@ const Starships = () => {
 			setStarships(
 				currentStarships.map(index => {
 					return (
-						<li key={index.uid}>
+						<li key={index.uid} className="ListPlanet">
 							<CardStarships element={index} />
 						</li>
 					);
@@ -44,11 +44,11 @@ const Starships = () => {
 	);
 
 	return (
-		<div className="starships">
-			<h1 className="starshipsTitle text-center"> Star Wars Starships</h1>
+		<div className="Planetview">
+			<h1 className="CardsPlanettitle text-center"> Starships</h1>
 			<ul className="ulcards">{starships}</ul>
 			<Pagination
-				className="starshipsPagination"
+				className="planetpagination"
 				count={4}
 				hidePrevButton
 				hideNextButton

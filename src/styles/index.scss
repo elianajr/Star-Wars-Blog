@@ -1,36 +1,18 @@
-// img {
-//     width: 14rem;
-// }
-.cardStarships {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-    width: 14rem;
-    margin-top: 2rem;
-  }
-  
-  .cardStarships:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
- 
-  .footerStarships {
-    padding: 2px 16px;
-  }
+
 
   li {
     list-style: none;
   }
 
-.starshipsDetails{
-    width: 25rem;
-    height: 20rem;
-    background: black;
-    color: rgb(102, 224, 255);
-    margin-top: 5rem;
-    border-radius: 15%;
-    
+  button {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; 
+    color: yellow;      
 }
+
 
 
   
