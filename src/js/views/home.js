@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useEstate } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
+import { Context } from "../store/appContext";
+import CardsPlanet from "../component/CardsPlanet.jsx";
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router";
+import SearchBar from "../component/SearchBar.jsx";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		
-	</div>
-);
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+
+	return <h1 />;
+};

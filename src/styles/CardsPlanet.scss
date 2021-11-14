@@ -1,0 +1,59 @@
+
+.Planetcards{
+    width: 15rem;
+    margin-top: 2rem;
+  
+}
+
+.ListPlanet{
+    list-style: none;
+    color:  #ff6;
+    border: #ff6;
+    font-weight: bold;
+}
+
+.ulcards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+}
+
+.Planetimg{
+    width: 100%;
+}
+
+
+
+.linkplanets{
+    color: black;
+    background:  #ff6;
+    padding: 0.5rem 0.5rem
+
+}
+
+.Bodycardplanet{
+    background: black;
+}
+
+.CardsPlanettitle{
+    color: #ff6;
+    font-weight: bold;
+}
+
+.Planetview{
+    background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1771&q=80);
+}
+
+.planetpagination{
+    color:black;
+    justify-content: center;
+    background: #ff6;
+    align-items: center;
+    display: flex;
+}
+
+.cardplanetfooter{
+    display: flex;
+    justify-content: center;
+}
+
