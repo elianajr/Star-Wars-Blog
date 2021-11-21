@@ -22,7 +22,7 @@ export const Navigationbar = () => {
 				<button
 					onClick={event => {
 						event.preventDefault;
-						actions.deletefavourites(favourite);
+						actions.deleteFavourites(favourite);
 					}}>
 					<i className="fas fa-times btnfavourite" />
 				</button>

@@ -28,7 +28,7 @@ export const StarshipsDetails = () => {
 								<Card.Img
 									className="descriptionimgcard"
 									variant="top"
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7obhHm6ezQWuzaCKt06uxFqUC-emWkjJM55K6QkUExtT936SO52pBKSeAlQP1rDh1rc&usqp=CAU"
+									src="https://c.tenor.com/4Pz_u5bWHqYAAAAC/star-wars-spaceships.https://c.tenor.com/4Pz_u5bWHqYAAAAC/star-wars-spaceships.gif"
 								/>
 								<Card.Body className="textdescriptionplanet">
 									<Card.Title>{store.starshipsDetails.name}</Card.Title>
