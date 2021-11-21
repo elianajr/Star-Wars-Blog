@@ -8,9 +8,11 @@ import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { FavButton } from "./favbutton.jsx";
 
 const CardsPlanet = props => {
 	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="Planetcards">
 			<Card className="text-center">
@@ -26,14 +28,15 @@ const CardsPlanet = props => {
 						<Link className="linkplanets rounded mx-4" to={`/planets/`.concat(props.urlnumber)}>
 							Learn more
 						</Link>
-						<Button
+						<button
+							className="button"
 							onClick={event => {
 								event.preventDefault;
 								actions.addFavourites(props.element.name);
 								// console.log(store.favourites);
 							}}>
-							<i className="far fa-heart" />
-						</Button>
+							<FavButton />
+						</button>
 					</div>
 				</Card.Body>
 			</Card>
