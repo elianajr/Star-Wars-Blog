@@ -23,17 +23,18 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.getPlanets();
+			state.actions.getStarships();
 		}, []);
 
-		useEffect(() => {
-			let local = JSON.parse(localStorage.getItem("starships"));
-			if (local.length != 0) {
-				state.store.starships = local;
-				console.log(local);
-			} else {
-				state.actions.getStarships();
-			}
-		}, []);
+		// useEffect(() => {
+		// let local = JSON.parse(localStorage.getItem("starships"));
+		// if (local.length != 0) {
+		// 	state.store.starships = local;
+		// 	console.log(local);
+		// } else {
+		// state.actions.getStarships();
+		// }
+		// }, []);
 
 		return (
 			<Context.Provider value={state}>
