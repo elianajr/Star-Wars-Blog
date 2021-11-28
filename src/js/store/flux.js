@@ -5,9 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			urlStarships: "https://www.swapi.tech/api/starships/",
 			starships: [],
 			favourites: [],
-			deleteFavourtites: [],
 			starshipsDetails: [],
-			starshipsURLDetail: [],
 			urlplanets: "https://www.swapi.tech/api/planets",
 			urlplanetsdescription: "https://www.swapi.tech/api/planets",
 			planets: [],
@@ -30,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 						console.log(responseAsJSON.results);
 						localStorage.setItem("starships", JSON.stringify(getStore().starships));
-						localStorage.setItem("starships_info", JSON.stringify(getStore().starshipsURLDetail));
+						localStorage.setItem("starships_info", JSON.stringify(getStore()));
 					})
 					.catch(error => {
 						console.log(error);
@@ -52,31 +50,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getPlanets: () => {
-				if (localStorage.getItem("planets") == undefined) {
-					fetch(getStore().urlplanets)
-						.then(response => {
-							if (response.ok) {
-								return response.json();
-							}
+				fetch(getStore().urlplanets)
+					.then(response => {
+						if (response.ok) {
+							return response.json();
+						}
 
-							throw new Error("Fallo");
-						})
-						.then(responseAsJson => {
-							setStore({ planets: [...getStore().planets, ...responseAsJson.results] });
-							setStore({ urlplanets: responseAsJson.next });
+						throw new Error("Fallo");
+					})
+					.then(responseAsJson => {
+						setStore({ planets: [...getStore().planets, ...responseAsJson.results] });
+						setStore({ urlplanets: responseAsJson.next });
 
-							if (responseAsJson.next) {
-								getActions().getPlanets();
-							}
-							localStorage.setItem("planets", JSON.stringify(getStore().planets));
-						})
-						.catch(error => {
-							console.log("Error");
-						});
-				} else {
-					let localplanets = JSON.parse(localStorage.getItem("planets"));
-					setStore({ planets: localplanets });
-				}
+						if (responseAsJson.next) {
+							getActions().getPlanets();
+						}
+						localStorage.setItem("planets", JSON.stringify(getStore().planets));
+					})
+					.catch(error => {
+						console.log("Error");
+					});
 			},
 
 			getPlanetsDescription: num => {
